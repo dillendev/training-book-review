@@ -46,6 +46,11 @@ components:
         - bookId
         - rating
         - comment
+      example:
+        id: 1
+        bookId: 2
+        rating: 5
+        comment: This is a great book!
       properties:
         id:
           type: integer
@@ -60,6 +65,9 @@ components:
       required:
         - rating
         - comment
+      example:
+        rating: 5
+        comment: This is a great book!
       properties:
         rating:
           type: integer
@@ -103,7 +111,7 @@ paths:
                 $ref: "#/components/schemas/Error"
   /api/books/{bookId}/reviews:
     get:
-      summary: Returns a list of time entries
+      summary: List reviews for a book
       security: []
       operationId: listReviews
       parameters:
